@@ -29,15 +29,15 @@ public class BasePage {
 		String browserName = prop.getProperty("browser");
 
 		if (browserName.equals("chrome")) {
-			System.setProperty("webdriver.chrome.driver", "/Users/NaveenKhunteta/Downloads/chromedriver");
+			System.setProperty("webdriver.chrome.driver","./drivers/chromedriver.exe");
 			tldriver.set(new ChromeDriver());
-		} else if (browserName.equals("firefox")) {
+		} /*else if (browserName.equals("firefox")) {
 			System.setProperty("webdriver.gecko.driver", "/Users/NaveenKhunteta/Downloads/geckodriver");
 			tldriver.set(new FirefoxDriver());
 		} else if (browserName.equals("ie")) {
 			System.setProperty("webdriver.ie.driver", "/Users/NaveenKhunteta/Downloads/InternetExplorerdriver");
 			tldriver.set(new InternetExplorerDriver());
-		} else {
+		} */else {
 			System.out.println("no browser is defined");
 		}
 
@@ -59,8 +59,7 @@ public class BasePage {
 	public Properties initialize_properties() {
 		prop = new Properties();
 		try {
-			FileInputStream ip = new FileInputStream("/Users/NaveenKhunteta/Documents/workspace/MarchPOMSeries/"
-					+ "src/main/java/com/qa/hubspot/configuration/config.properties");
+			FileInputStream ip = new FileInputStream("C:\\Users\\RAJAREDDY\\git\\March2019POMFramework\\src\\main\\java\\com\\qa\\hubspot\\testdata\\apptestdata.xlsx");
 			prop.load(ip);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
