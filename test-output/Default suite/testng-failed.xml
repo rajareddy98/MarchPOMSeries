@@ -1,12 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test thread-count="5" name="Default test(failed)">
+  <test name="Default test(failed)">
     <classes>
+      <class name="com.qa.hubspot.tests.HomePageTest">
+        <methods>
+          <include name="verifyLoggedInAccountNameTest"/>
+          <include name="verifyHomePageHeaderTest"/>
+          <include name="verifyHomePageTitleTest"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.qa.hubspot.tests.HomePageTest -->
+      <class name="com.qa.hubspot.tests.LoginTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="loginTest"/>
+          <include name="verifySignUpLinkTest"/>
+          <include name="verifyLoginPageTitleTest"/>
+        </methods>
+      </class> <!-- com.qa.hubspot.tests.LoginTest -->
       <class name="com.qa.hubspot.tests.ContactsPageTest">
         <methods>
-          <include name="createContactsTest" invocation-numbers="0 1"/>
-          <include name="tearDown"/>
+          <include name="createContactsTest" invocation-numbers="0 1 2 3 4"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- com.qa.hubspot.tests.ContactsPageTest -->

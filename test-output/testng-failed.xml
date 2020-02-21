@@ -1,18 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Hub Spot Test Suite]">
-  <listeners>
-    <listener class-name="com.qa.hubspot.listeners.ExtentReportListener"/>
-  </listeners>
-  <test thread-count="5" name="hub spot regression Test(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
     <classes>
+      <class name="com.qa.hubspot.tests.HomePageTest">
+        <methods>
+          <include name="verifyLoggedInAccountNameTest"/>
+          <include name="verifyHomePageHeaderTest"/>
+          <include name="verifyHomePageTitleTest"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.qa.hubspot.tests.HomePageTest -->
       <class name="com.qa.hubspot.tests.LoginTest">
         <methods>
           <include name="setUp"/>
-          <include name="tearDown"/>
+          <include name="loginTest"/>
+          <include name="verifySignUpLinkTest"/>
           <include name="verifyLoginPageTitleTest"/>
         </methods>
       </class> <!-- com.qa.hubspot.tests.LoginTest -->
+      <class name="com.qa.hubspot.tests.ContactsPageTest">
+        <methods>
+          <include name="createContactsTest" invocation-numbers="0 1 2 3 4"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.qa.hubspot.tests.ContactsPageTest -->
     </classes>
-  </test> <!-- hub spot regression Test(failed) -->
-</suite> <!-- Failed suite [Hub Spot Test Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
